@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TKq-NA-OtI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TKq-NA-OtI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AmericanTypewriter.ttc">
+            <string>AmericanTypewriter</string>
+            <string>AmericanTypewriter-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Sign In View Controller-->
         <scene sceneID="uMq-md-ZMD">
@@ -26,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUYFASTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sm0-FT-u02">
-                                <rect key="frame" x="70" y="52" width="236.5" height="45.5"/>
+                                <rect key="frame" x="69.5" y="52" width="236.5" height="45.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,14 +74,20 @@ Please sign in or create a new account. </string>
                                 <rect key="frame" x="42" y="351" width="172" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="I forgot my password"/>
+                                <connections>
+                                    <action selector="forgotPasswordButtonPressed:" destination="TKq-NA-OtI" eventType="touchUpInside" id="y21-D4-iLK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unG-Nm-lCu">
-                                <rect key="frame" x="127" y="447" width="120" height="38"/>
+                                <rect key="frame" x="127.5" y="447" width="120" height="38"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="22"/>
                                 <state key="normal" title="Sign me in!"/>
+                                <connections>
+                                    <action selector="signInButtonPressed:" destination="TKq-NA-OtI" eventType="touchUpInside" id="KAd-FJ-82M"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0W-Zi-jKm">
-                                <rect key="frame" x="76" y="597" width="222" height="38"/>
+                                <rect key="frame" x="76.5" y="597" width="222" height="38"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="22"/>
                                 <state key="normal" title="New account, please!"/>
                                 <connections>
@@ -111,10 +123,23 @@ Please sign in or create a new account. </string>
                             <constraint firstItem="unG-Nm-lCu" firstAttribute="centerX" secondItem="nMI-7m-0vX" secondAttribute="centerX" id="zTc-XU-NmM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="aQb-Ko-68H" id="D5r-bc-Y9S"/>
+                        <outlet property="passwordTextField" destination="U1W-Hk-fhJ" id="Wdb-KR-AC5"/>
+                        <segue destination="58s-37-VDn" kind="presentation" identifier="signin-main-segue" modalTransitionStyle="crossDissolve" id="CNd-Fc-mAy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIj-iP-utw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1276" y="-211.84407796101951"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="eca-uy-kTJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="58s-37-VDn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHp-EE-XBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-892" y="266"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="ouA-t9-107">
@@ -236,6 +261,9 @@ Please sign in or create a new account. </string>
                             <constraint firstItem="K1X-Qo-2tC" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="ylP-t9-W0B"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="58s-37-VDn" kind="presentation" identifier="signup-main-segue" modalTransitionStyle="crossDissolve" id="BR7-qq-7fu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZW5-ls-l8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -299,6 +327,7 @@ Please sign in or create a new account. </string>
         <image name="bgimage" width="2786" height="2792"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xc2-r2-vho"/>
+        <segue reference="ATw-Zx-otB"/>
+        <segue reference="BR7-qq-7fu"/>
     </inferredMetricsTieBreakers>
 </document>
