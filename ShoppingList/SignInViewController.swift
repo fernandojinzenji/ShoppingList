@@ -53,7 +53,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             else
             {
                 
-                // TODO: Save to userdefault
+                UserDefaults.standard.set(opUser?.email!, forKey: "loggedEmail")
                 self.performSegue(withIdentifier: "signin-main-segue", sender: self)
             }
         }

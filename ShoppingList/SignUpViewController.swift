@@ -75,7 +75,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             else
             {
                 
-                // TODO: Save to userdefault
+                UserDefaults.standard.set(opUser?.email!, forKey: "loggedEmail")
                 self.performSegue(withIdentifier: "signup-main-segue", sender: self)
             }
         }

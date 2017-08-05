@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AmericanTypewriter.ttc">
+            <string>AmericanTypewriter</string>
+            <string>AmericanTypewriter-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -18,26 +24,28 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimage" translatesAutoresizingMaskIntoConstraints="NO" id="1pW-9Q-YeR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUYFASTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbc-7o-TS9">
-                                <rect key="frame" x="48" y="240" width="279" height="53.5"/>
+                                <rect key="frame" x="67.666666666666686" y="190" width="279" height="53.666666666666657"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="46"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-v9-XMt">
-                                <rect key="frame" x="16" y="302" width="343" height="59"/>
+                                <rect key="frame" x="16" y="283.66666666666669" width="382" height="162"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="rh9-Ot-MYp"/>
+                                    <constraint firstAttribute="height" constant="162" id="rh9-Ot-MYp"/>
                                 </constraints>
-                                <string key="text">The easiast to use shopping list app. 
-Save time for what really matters.</string>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="18"/>
+                                <string key="text">Share your list.
+Shop faster.
+Save time.
+Enjoy your life!</string>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -45,10 +53,9 @@ Save time for what really matters.</string>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1pW-9Q-YeR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="3sV-0r-deZ"/>
-                            <constraint firstItem="RUj-v9-XMt" firstAttribute="top" secondItem="pbc-7o-TS9" secondAttribute="bottom" constant="8" id="9tZ-7L-NKN"/>
+                            <constraint firstItem="RUj-v9-XMt" firstAttribute="top" secondItem="pbc-7o-TS9" secondAttribute="bottom" constant="40" id="9tZ-7L-NKN"/>
                             <constraint firstItem="RUj-v9-XMt" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="9x8-x5-XZU"/>
-                            <constraint firstItem="RUj-v9-XMt" firstAttribute="top" secondItem="pbc-7o-TS9" secondAttribute="bottom" constant="8.5" id="GWd-EX-qf0"/>
-                            <constraint firstItem="pbc-7o-TS9" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="220" id="KPW-74-Gdi"/>
+                            <constraint firstItem="pbc-7o-TS9" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="170" id="KPW-74-Gdi"/>
                             <constraint firstItem="1pW-9Q-YeR" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Lgg-ZD-1W2"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="1pW-9Q-YeR" secondAttribute="bottom" id="S5b-O4-SKf"/>
                             <constraint firstItem="pbc-7o-TS9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d5g-4W-IuS"/>
