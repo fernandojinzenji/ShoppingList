@@ -18,7 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Initiate Firebase
         FirebaseApp.configure()
+        
+        // Check logged user and set correct storyboard
+        var storyboard: UIStoryboard
+        if UserDefaults.standard.value(forKey: "loggedEmail") == nil {
+            
+            storyboard = UIStoryboard.init(name: "Login", bundle: .main)
+        }
+        else {
+            
+            storyboard = UIStoryboard.init(name: "Main", bundle: .main)
+        }
+        
+        let rootVC = storyboard.instantiateInitialViewController()
+        window?.rootViewController = rootVC
+        window?.makeKeyAndVisible()
         
         return true
     }

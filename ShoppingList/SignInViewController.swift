@@ -7,29 +7,62 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Do any additional setup after loading the view
+        
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
-    */
 
+    // MARK: Actions
+    
+    @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
+        
+        Auth.auth().sendPasswordReset(withEmail: self.emailTextField.text!) { (opError) in
+            
+            let alert = UIAlertController(title: "E-mail sent", message: "Please, check your e-mail to see how to reset your password", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func signInButtonPressed(_ sender: UIButton) {
+        
+        Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (opUser, opError) in
+            
+            if opError != nil {
+            
+                let alert = UIAlertController(title: "Ooops", message: opError!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            else
+            {
+                
+                UserDefaults.standard.set(opUser?.email!, forKey: "loggedEmail")
+                self.performSegue(withIdentifier: "signin-main-segue", sender: self)
+            }
+        }
+    }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
