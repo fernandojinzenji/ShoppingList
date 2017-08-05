@@ -198,6 +198,10 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="22"/>
                                 <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="NiY-K3-ZZ6" eventType="touchUpInside" id="nHP-tW-4yH"/>
+                                    <segue destination="uUd-G4-6Am" kind="presentation" identifier="logout-segue" modalTransitionStyle="crossDissolve" id="gEO-mW-l1m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -216,6 +220,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIy-jR-Yzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-818.39999999999998" y="1342.5787106446778"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="eyQ-dm-wfH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="uUd-G4-6Am" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lxf-Es-Eio" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="1367"/>
         </scene>
     </scenes>
     <resources>
