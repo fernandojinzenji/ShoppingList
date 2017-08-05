@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9C2978861F341E4200E7AF27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C2978851F341E4200E7AF27 /* GoogleService-Info.plist */; };
+		9C2978881F3505FD00E7AF27 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2978871F3505FD00E7AF27 /* SignInViewController.swift */; };
+		9C29788A1F35062800E7AF27 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2978891F35062800E7AF27 /* SignUpViewController.swift */; };
+		9C29788F1F35868C00E7AF27 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C29788E1F35868C00E7AF27 /* Login.storyboard */; };
+		9C2978931F35871D00E7AF27 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2978921F35871D00E7AF27 /* LaunchScreenViewController.swift */; };
+		9C2978951F35877D00E7AF27 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2978941F35877D00E7AF27 /* PrivacyPolicyViewController.swift */; };
+		9C2978971F3587A700E7AF27 /* ListItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2978961F3587A700E7AF27 /* ListItemsViewController.swift */; };
+		9C2978991F3587B200E7AF27 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2978981F3587B200E7AF27 /* AddItemViewController.swift */; };
+		9C29789B1F3587C000E7AF27 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C29789A1F3587C000E7AF27 /* SettingsViewController.swift */; };
 		9C371F681F34150D0002ACE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C371F671F34150D0002ACE0 /* AppDelegate.swift */; };
 		9C371F6A1F34150D0002ACE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C371F691F34150D0002ACE0 /* ViewController.swift */; };
 		9C371F6D1F34150D0002ACE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C371F6B1F34150D0002ACE0 /* Main.storyboard */; };
@@ -20,6 +28,14 @@
 		0362D152110580ADADB05A06 /* Pods-ShoppingList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingList/Pods-ShoppingList.release.xcconfig"; sourceTree = "<group>"; };
 		7AEFB0CE5BD3781F92EABB53 /* Pods_ShoppingList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2978851F341E4200E7AF27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9C2978871F3505FD00E7AF27 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		9C2978891F35062800E7AF27 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9C29788E1F35868C00E7AF27 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9C2978921F35871D00E7AF27 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		9C2978941F35877D00E7AF27 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		9C2978961F3587A700E7AF27 /* ListItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemsViewController.swift; sourceTree = "<group>"; };
+		9C2978981F3587B200E7AF27 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		9C29789A1F3587C000E7AF27 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Assets.xcassets/SettingsViewController.swift; sourceTree = "<group>"; };
 		9C371F641F34150D0002ACE0 /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C371F671F34150D0002ACE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C371F691F34150D0002ACE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +75,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9C29788B1F35065A00E7AF27 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9C29788E1F35868C00E7AF27 /* Login.storyboard */,
+				9C2978871F3505FD00E7AF27 /* SignInViewController.swift */,
+				9C2978891F35062800E7AF27 /* SignUpViewController.swift */,
+				9C2978941F35877D00E7AF27 /* PrivacyPolicyViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		9C2978901F3586DE00E7AF27 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9C371F6B1F34150D0002ACE0 /* Main.storyboard */,
+				9C2978981F3587B200E7AF27 /* AddItemViewController.swift */,
+				9C29789A1F3587C000E7AF27 /* SettingsViewController.swift */,
+				9C2978961F3587A700E7AF27 /* ListItemsViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9C2978911F3586F500E7AF27 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				9C371F691F34150D0002ACE0 /* ViewController.swift */,
+				9C371F701F34150D0002ACE0 /* LaunchScreen.storyboard */,
+				9C2978921F35871D00E7AF27 /* LaunchScreenViewController.swift */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
 		9C371F5B1F34150D0002ACE0 = {
 			isa = PBXGroup;
 			children = (
@@ -81,12 +129,12 @@
 			isa = PBXGroup;
 			children = (
 				9C371F671F34150D0002ACE0 /* AppDelegate.swift */,
-				9C371F691F34150D0002ACE0 /* ViewController.swift */,
-				9C371F6B1F34150D0002ACE0 /* Main.storyboard */,
 				9C371F6E1F34150D0002ACE0 /* Assets.xcassets */,
-				9C371F701F34150D0002ACE0 /* LaunchScreen.storyboard */,
 				9C371F731F34150D0002ACE0 /* Info.plist */,
 				9C2978851F341E4200E7AF27 /* GoogleService-Info.plist */,
+				9C2978911F3586F500E7AF27 /* Launch */,
+				9C2978901F3586DE00E7AF27 /* Main */,
+				9C29788B1F35065A00E7AF27 /* Login */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -157,6 +205,7 @@
 				9C371F721F34150D0002ACE0 /* LaunchScreen.storyboard in Resources */,
 				9C2978861F341E4200E7AF27 /* GoogleService-Info.plist in Resources */,
 				9C371F6F1F34150D0002ACE0 /* Assets.xcassets in Resources */,
+				9C29788F1F35868C00E7AF27 /* Login.storyboard in Resources */,
 				9C371F6D1F34150D0002ACE0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +267,13 @@
 			files = (
 				9C371F6A1F34150D0002ACE0 /* ViewController.swift in Sources */,
 				9C371F681F34150D0002ACE0 /* AppDelegate.swift in Sources */,
+				9C29788A1F35062800E7AF27 /* SignUpViewController.swift in Sources */,
+				9C2978951F35877D00E7AF27 /* PrivacyPolicyViewController.swift in Sources */,
+				9C2978971F3587A700E7AF27 /* ListItemsViewController.swift in Sources */,
+				9C2978991F3587B200E7AF27 /* AddItemViewController.swift in Sources */,
+				9C2978931F35871D00E7AF27 /* LaunchScreenViewController.swift in Sources */,
+				9C2978881F3505FD00E7AF27 /* SignInViewController.swift in Sources */,
+				9C29789B1F3587C000E7AF27 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +403,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.fernandojinzenji.ShoppingList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -362,7 +418,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.fernandojinzenji.ShoppingList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
