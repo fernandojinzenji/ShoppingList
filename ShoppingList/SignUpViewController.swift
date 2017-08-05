@@ -7,29 +7,99 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var privacyPolicyCheckbox: UIView!
+    
+    var privacyPolicyChecked = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.confirmPasswordTextField.delegate = self
+        
+        self.privacyPolicyCheckbox.isUserInteractionEnabled = true
+        self.privacyPolicyCheckbox.layer.cornerRadius = 4.0
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.view.endEditing(true)
     }
-    */
-
+    
+    // MARK: Actions
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
+        // Local validations
+        if !self.privacyPolicyChecked {
+            
+            let alert = UIAlertController(title: "Privacy Policy", message: "You need to check our Privacy Policy to continue", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if self.emailTextField.text!.isEmpty || self.passwordTextField.text!.isEmpty || self.confirmPasswordTextField.text!.isEmpty {
+            
+            let alert = UIAlertController(title: "Required fields", message: "Sorry, but all fields are required", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if self.passwordTextField.text! != self.confirmPasswordTextField.text! {
+            
+            let alert = UIAlertController(title: "Passwords do not match", message: "Sorry, but your passwords do not match", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        // Save to firebase
+        Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (opUser, opError) in
+            
+            if opError != nil {
+                
+                let alert = UIAlertController(title: "Ooops", message: opError!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            else
+            {
+                
+                // TODO: Save to userdefault
+                self.performSegue(withIdentifier: "signup-main-segue", sender: self)
+            }
+        }
+    }
+    
+    @IBAction func checkboxTapped(_ sender: UITapGestureRecognizer) {
+        
+        if self.privacyPolicyChecked == false {
+            
+            self.privacyPolicyChecked = true
+            self.privacyPolicyCheckbox.backgroundColor = UIColor.gray
+        }
+        else {
+            
+            self.privacyPolicyChecked = false
+            self.privacyPolicyCheckbox.backgroundColor = UIColor.white
+        }
+    }
+    
+    // UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+    }
 }

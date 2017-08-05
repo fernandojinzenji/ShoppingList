@@ -200,14 +200,21 @@ Please sign in or create a new account. </string>
                                 <rect key="frame" x="81" y="597" width="213" height="38"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="22"/>
                                 <state key="normal" title="Save my credentials"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="bV0-2T-O6F" eventType="touchUpInside" id="wl1-b5-mkV"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-f9-vJw">
                                 <rect key="frame" x="42" y="357.5" width="32" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="jO4-tQ-L7A"/>
                                     <constraint firstAttribute="width" constant="32" id="wlf-CG-ag4"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Njh-4F-S96" appends="YES" id="GVg-h3-cle"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmd-Qm-Gwc">
                                 <rect key="frame" x="82" y="358" width="251" height="30"/>
@@ -262,10 +269,19 @@ Please sign in or create a new account. </string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmPasswordTextField" destination="j1Y-cB-oFv" id="wS5-z7-nP7"/>
+                        <outlet property="emailTextField" destination="6ds-X4-gic" id="aQ0-af-lBF"/>
+                        <outlet property="passwordTextField" destination="fEV-B9-Yz4" id="9P3-Cf-6NV"/>
+                        <outlet property="privacyPolicyCheckbox" destination="OOb-f9-vJw" id="G0q-cs-yLw"/>
                         <segue destination="58s-37-VDn" kind="presentation" identifier="signup-main-segue" modalTransitionStyle="crossDissolve" id="BR7-qq-7fu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZW5-ls-l8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Njh-4F-S96">
+                    <connections>
+                        <action selector="checkboxTapped:" destination="bV0-2T-O6F" id="Itb-bi-S7T"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-423.19999999999999" y="-212.74362818590706"/>
         </scene>

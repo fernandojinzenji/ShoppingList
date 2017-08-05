@@ -34,9 +34,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         Auth.auth().sendPasswordReset(withEmail: self.emailTextField.text!) { (opError) in
             
             let alert = UIAlertController(title: "E-mail sent", message: "Please, check your e-mail to see how to reset your password", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { (action) in
-                self.dismiss(animated: true, completion: nil)
-            }))
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         
@@ -49,9 +47,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             if opError != nil {
             
                 let alert = UIAlertController(title: "Ooops", message: opError!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { (action) in
-                    self.dismiss(animated: true, completion: nil)
-                }))
+                alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
             else
