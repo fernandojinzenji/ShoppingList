@@ -31,7 +31,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
         
-        
+        Auth.auth().sendPasswordReset(withEmail: self.emailTextField.text!) { (opError) in
+            
+            let alert = UIAlertController(title: "E-mail sent", message: "Please, check your e-mail to see how to reset your password", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { (action) in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
         
     }
     
