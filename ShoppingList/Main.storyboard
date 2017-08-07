@@ -116,9 +116,12 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="22"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="cancel-item-segue" modalTransitionStyle="crossDissolve" id="AGZ-6k-DTS"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tez-5w-ywF">
-                                <rect key="frame" x="16" y="110" width="343" height="541"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tez-5w-ywF">
+                                <rect key="frame" x="16" y="140" width="343" height="511"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="add-item-cell" id="DGT-gd-829">
@@ -130,15 +133,22 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="sHj-4o-Bv5" id="14N-rv-OM9"/>
+                                    <outlet property="delegate" destination="sHj-4o-Bv5" id="5cU-U4-MMC"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search a product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEj-tP-eWe">
-                                <rect key="frame" x="16" y="66" width="343" height="36"/>
+                                <rect key="frame" x="16" y="66" width="343" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="XJv-nt-uNv"/>
+                                    <constraint firstAttribute="height" constant="50" id="XJv-nt-uNv"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="filterChanged:" destination="sHj-4o-Bv5" eventType="editingChanged" id="A4S-lx-seI"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,13 +163,16 @@
                             <constraint firstItem="mEj-tP-eWe" firstAttribute="trailing" secondItem="13Y-eR-jfG" secondAttribute="trailingMargin" id="a9w-6P-SeQ"/>
                             <constraint firstItem="HcD-rI-VdX" firstAttribute="top" secondItem="tez-5w-ywF" secondAttribute="bottom" constant="16" id="bdM-SC-a0Q"/>
                             <constraint firstItem="tez-5w-ywF" firstAttribute="trailing" secondItem="13Y-eR-jfG" secondAttribute="trailingMargin" id="drl-6H-uqe"/>
-                            <constraint firstItem="tez-5w-ywF" firstAttribute="top" secondItem="mEj-tP-eWe" secondAttribute="bottom" constant="8" id="e8a-oC-LAf"/>
+                            <constraint firstItem="tez-5w-ywF" firstAttribute="top" secondItem="mEj-tP-eWe" secondAttribute="bottom" constant="24" id="e8a-oC-LAf"/>
                             <constraint firstItem="ScI-7g-Obd" firstAttribute="top" secondItem="13Y-eR-jfG" secondAttribute="top" id="eJm-qn-Tc5"/>
                             <constraint firstItem="2Jk-3E-FC5" firstAttribute="top" secondItem="Sbq-Dk-g5K" secondAttribute="bottom" id="hIg-Q8-Cem"/>
                             <constraint firstItem="mEj-tP-eWe" firstAttribute="leading" secondItem="13Y-eR-jfG" secondAttribute="leadingMargin" id="lgg-pD-O2h"/>
                             <constraint firstItem="2Jk-3E-FC5" firstAttribute="trailing" secondItem="13Y-eR-jfG" secondAttribute="trailingMargin" id="w0O-Ie-Tc9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="tez-5w-ywF" id="NoI-uD-iHO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86q-3O-uoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,4 +246,7 @@
     <resources>
         <image name="bgimage" width="2786" height="2792"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="AGZ-6k-DTS"/>
+    </inferredMetricsTieBreakers>
 </document>
