@@ -12,6 +12,7 @@ class Product {
     
     var name: String
     var section: String
+    var addedToList = false
     
     init(name: String, section: String) {
         
