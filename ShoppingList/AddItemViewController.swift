@@ -46,22 +46,41 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return productDataSource.count
+        if productDataSource.count > 0 {
+            return productDataSource.count
+        }
+        else {
+            self.productDataSource.append(Product(name: "new|item", section: "no|sect"))
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "add-item-cell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "add-item-cell") as? AddItemTableViewCell else {
             print("Error dequeing cell")
             return UITableViewCell()
         }
         
         let product = productDataSource[indexPath.row]
         
-        cell.textLabel?.text = "\(product.name) (\(product.section))"
+        // If no item was found, allow user to add the item
+        if product.name == "new|item" && product.section == "no|sect" {
+            
+            cell.nameLabel.text = "No item found. Click here to add it."
+            cell.isInListLabel.isHidden = true
+        }
+        else {
         
-        if product.addedToList {
-            self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+            cell.nameLabel.text = "\(product.name) (\(product.section))"
+            
+            if product.addedToList {
+                self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+                cell.isInListLabel.isHidden = false
+            }
+            else {
+                cell.isInListLabel.isHidden = true
+            }
         }
         
         return cell
@@ -72,11 +91,16 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Mark product as selected in the full list
         let selectedProduct = self.productDataSource[indexPath.row]
         
-        for p in self.productList {
+        if let cell = self.tableView.cellForRow(at: indexPath) as? AddItemTableViewCell {
             
-            if p.name == selectedProduct.name {
-                p.addedToList = true
-                break
+            cell.isInListLabel.isHidden = false
+            
+            for p in self.productList {
+                
+                if p.name == selectedProduct.name {
+                    p.addedToList = true
+                    break
+                }
             }
         }
     }
@@ -86,11 +110,16 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Mark product as unselected in the full list
         let selectedProduct = self.productDataSource[indexPath.row]
         
-        for p in self.productList {
+        if let cell = self.tableView.cellForRow(at: indexPath) as? AddItemTableViewCell {
             
-            if p.name == selectedProduct.name {
-                p.addedToList = false
-                break
+            cell.isInListLabel.isHidden = true
+            
+            for p in self.productList {
+                
+                if p.name == selectedProduct.name {
+                    p.addedToList = false
+                    break
+                }
             }
         }
     }

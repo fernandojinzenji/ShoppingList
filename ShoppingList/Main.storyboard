@@ -121,13 +121,38 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="add-item-cell" id="DGT-gd-829">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="add-item-cell" id="DGT-gd-829" customClass="AddItemTableViewCell" customModule="ShoppingList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DGT-gd-829" id="8qF-rM-jab">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zaq-FB-hye">
+                                                    <rect key="frame" x="8" y="11" width="288.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="🛒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtU-uL-g2v">
+                                                    <rect key="frame" x="312.5" y="11.5" width="23" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HtU-uL-g2v" firstAttribute="trailing" secondItem="8qF-rM-jab" secondAttribute="trailingMargin" id="8ok-vO-8Io"/>
+                                                <constraint firstItem="Zaq-FB-hye" firstAttribute="leading" secondItem="8qF-rM-jab" secondAttribute="leadingMargin" id="NfD-mT-GxN"/>
+                                                <constraint firstItem="HtU-uL-g2v" firstAttribute="leading" secondItem="Zaq-FB-hye" secondAttribute="trailing" constant="16" id="Pym-pb-BHA"/>
+                                                <constraint firstItem="Zaq-FB-hye" firstAttribute="centerY" secondItem="8qF-rM-jab" secondAttribute="centerY" id="Y0f-4d-c0e"/>
+                                                <constraint firstItem="HtU-uL-g2v" firstAttribute="centerY" secondItem="8qF-rM-jab" secondAttribute="centerY" id="Y3g-Pq-D7L"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="isInListLabel" destination="HtU-uL-g2v" id="ZiJ-5t-h37"/>
+                                            <outlet property="nameLabel" destination="Zaq-FB-hye" id="Xog-0C-DiO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
