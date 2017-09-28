@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol AddItemViewControllerDelegate: class {
+    
+    func didFinishedAddItems(selectedProducts: [Product])
+    
+}
+
 class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -15,6 +21,8 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let productList = Product.generateSampleList()
     var productDataSource = [Product]()
+    
+    weak var delegate: AddItemViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +48,15 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         self.tableView.reloadData()
+    }
+    
+    @IBAction func closeButtonPressed(_ sender: UIButton) {
+        
+        delegate?.didFinishedAddItems(selectedProducts: productList.filter({ (p) -> Bool in
+            p.addedToList == true
+        }))
+        navigationController?.popViewController(animated: true)
+        
     }
     
     // MARK: UITableViewDelegate, UITableViewDataSource

@@ -45,6 +45,7 @@
 		9C371F6E1F34150D0002ACE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C371F711F34150D0002ACE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C371F731F34150D0002ACE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CC2CA7E1F7D6FCF0014B7BF /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		9CD63CE81F368C8D0075D1CD /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		9CD63CEA1F3964C90075D1CD /* AddItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddItemTableViewCell.swift; path = Assets.xcassets/AddItemTableViewCell.swift; sourceTree = "<group>"; };
 		C0B8EEC5CF4322A079E88138 /* Pods-ShoppingList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingList/Pods-ShoppingList.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,14 +136,23 @@
 			children = (
 				9C371F671F34150D0002ACE0 /* AppDelegate.swift */,
 				9C371F6E1F34150D0002ACE0 /* Assets.xcassets */,
+				9CC2CA7E1F7D6FCF0014B7BF /* AppIcon.appiconset */,
 				9C371F731F34150D0002ACE0 /* Info.plist */,
 				9C2978851F341E4200E7AF27 /* GoogleService-Info.plist */,
-				9CD63CE81F368C8D0075D1CD /* Product.swift */,
+				9C8706851F7AF65100B77080 /* Models */,
 				9C2978911F3586F500E7AF27 /* Launch */,
 				9C2978901F3586DE00E7AF27 /* Main */,
 				9C29788B1F35065A00E7AF27 /* Login */,
 			);
 			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		9C8706851F7AF65100B77080 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9CD63CE81F368C8D0075D1CD /* Product.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

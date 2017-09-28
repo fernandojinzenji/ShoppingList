@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina5_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="AmericanTypewriter.ttc">
-            <string>AmericanTypewriter</string>
             <string>AmericanTypewriter-Semibold</string>
         </array>
     </customFonts>
@@ -24,31 +25,24 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimage" translatesAutoresizingMaskIntoConstraints="NO" id="1pW-9Q-YeR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbc-7o-TS9">
-                                <rect key="frame" x="69" y="190" width="276" height="124.66666666666669"/>
-                                <string key="text">SUPER
-SIMPLE
-SHOPPING LIST</string>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-v9-XMt">
-                                <rect key="frame" x="16" y="354.33333333333337" width="382" height="162.00000000000011"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s3cart" highlightedImage="s3cart" translatesAutoresizingMaskIntoConstraints="NO" id="hXh-yS-TDV">
+                                <rect key="frame" x="76" y="168" width="168" height="168"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="rh9-Ot-MYp"/>
+                                    <constraint firstAttribute="width" secondItem="hXh-yS-TDV" secondAttribute="height" multiplier="1:1" id="TKm-VA-q0S"/>
                                 </constraints>
-                                <string key="text">Share your list.
-Shop faster.
-Save time.
-Enjoy your life!</string>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="27"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DY9-KD-w9z">
+                                <rect key="frame" x="76" y="368" width="168" height="129.5"/>
+                                <string key="text">Super
+Simple
+Shopping List</string>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -56,23 +50,25 @@ Enjoy your life!</string>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1pW-9Q-YeR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="3sV-0r-deZ"/>
-                            <constraint firstItem="RUj-v9-XMt" firstAttribute="top" secondItem="pbc-7o-TS9" secondAttribute="bottom" constant="40" id="9tZ-7L-NKN"/>
-                            <constraint firstItem="RUj-v9-XMt" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="9x8-x5-XZU"/>
-                            <constraint firstItem="pbc-7o-TS9" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="170" id="KPW-74-Gdi"/>
                             <constraint firstItem="1pW-9Q-YeR" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Lgg-ZD-1W2"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="1pW-9Q-YeR" secondAttribute="bottom" id="S5b-O4-SKf"/>
-                            <constraint firstItem="pbc-7o-TS9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d5g-4W-IuS"/>
+                            <constraint firstItem="hXh-yS-TDV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="60" id="WrH-4J-xb3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DY9-KD-w9z" secondAttribute="trailing" constant="60" id="Y6C-3U-V10"/>
+                            <constraint firstItem="DY9-KD-w9z" firstAttribute="top" secondItem="hXh-yS-TDV" secondAttribute="bottom" constant="32" id="ZRB-Qu-D2F"/>
                             <constraint firstAttribute="trailing" secondItem="1pW-9Q-YeR" secondAttribute="trailing" id="m7I-dN-XSW"/>
-                            <constraint firstAttribute="trailing" secondItem="RUj-v9-XMt" secondAttribute="trailing" constant="16" id="z2q-PF-k9j"/>
+                            <constraint firstItem="hXh-yS-TDV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-32" id="rdu-fO-iHo"/>
+                            <constraint firstItem="DY9-KD-w9z" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="60" id="wrh-St-Umu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hXh-yS-TDV" secondAttribute="trailing" constant="60" id="x4y-1L-R1n"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.18478260869568"/>
         </scene>
     </scenes>
     <resources>
         <image name="bgimage" width="2786" height="2792"/>
+        <image name="s3cart" width="790" height="743"/>
     </resources>
 </document>

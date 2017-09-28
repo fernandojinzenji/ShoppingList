@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TKq-NA-OtI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TKq-NA-OtI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="AmericanTypewriter.ttc">
             <string>AmericanTypewriter</string>
-            <string>AmericanTypewriter-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -31,20 +30,8 @@
                             <imageView userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimage" translatesAutoresizingMaskIntoConstraints="NO" id="ugv-JF-YN9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUYFASTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sm0-FT-u02">
-                                <rect key="frame" x="69.5" y="52" width="236.5" height="45.5"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="39"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="save your time at the supermarket!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KE-oC-Br6">
-                                <rect key="frame" x="68.5" y="97" width="238.5" height="16.5"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RS4-d4-ghV">
-                                <rect key="frame" x="40.5" y="183.5" width="294.5" height="55.5"/>
+                                <rect key="frame" x="40.5" y="198.5" width="294.5" height="55.5"/>
                                 <string key="text">WELCOME! 
 Sorry, I did not find your credentials. 
 Please sign in or create a new account. </string>
@@ -53,7 +40,7 @@ Please sign in or create a new account. </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQb-Ko-68H">
-                                <rect key="frame" x="42" y="255" width="291" height="36"/>
+                                <rect key="frame" x="42" y="270" width="291" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="055-ga-XGA"/>
                                 </constraints>
@@ -62,7 +49,7 @@ Please sign in or create a new account. </string>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1W-Hk-fhJ">
-                                <rect key="frame" x="42" y="307" width="291" height="36"/>
+                                <rect key="frame" x="42" y="322" width="291" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="r2D-AO-dhn"/>
                                 </constraints>
@@ -71,7 +58,7 @@ Please sign in or create a new account. </string>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjV-o5-2Wo">
-                                <rect key="frame" x="42" y="351" width="172" height="32"/>
+                                <rect key="frame" x="42" y="366" width="172" height="32"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="I forgot my password"/>
                                 <connections>
@@ -79,21 +66,34 @@ Please sign in or create a new account. </string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unG-Nm-lCu">
-                                <rect key="frame" x="127.5" y="447" width="120" height="38"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="22"/>
+                                <rect key="frame" x="92" y="462" width="191" height="53"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
                                 <state key="normal" title="Sign me in!"/>
                                 <connections>
                                     <action selector="signInButtonPressed:" destination="TKq-NA-OtI" eventType="touchUpInside" id="KAd-FJ-82M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0W-Zi-jKm">
-                                <rect key="frame" x="76.5" y="597" width="222" height="38"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="22"/>
+                                <rect key="frame" x="86.5" y="599" width="202" height="36"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <state key="normal" title="New account, please!"/>
                                 <connections>
                                     <segue destination="bV0-2T-O6F" kind="presentation" identifier="sign-up-segue" modalTransitionStyle="crossDissolve" id="ATw-Zx-otB"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s3cart" translatesAutoresizingMaskIntoConstraints="NO" id="9Pa-wf-CuB">
+                                <rect key="frame" x="151" y="32" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="BeC-cj-zJj"/>
+                                    <constraint firstAttribute="width" constant="72" id="Z7f-lb-JSq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super Simple Shopping List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KE-oC-Br6">
+                                <rect key="frame" x="95" y="112" width="185" height="16.5"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -107,19 +107,19 @@ Please sign in or create a new account. </string>
                             <constraint firstItem="f0W-Zi-jKm" firstAttribute="centerX" secondItem="nMI-7m-0vX" secondAttribute="centerX" id="E64-pg-njb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="U1W-Hk-fhJ" secondAttribute="trailing" constant="26" id="IeC-m0-Rzg"/>
                             <constraint firstItem="aQb-Ko-68H" firstAttribute="leading" secondItem="nMI-7m-0vX" secondAttribute="leadingMargin" constant="26" id="JH9-Nt-Suf"/>
+                            <constraint firstItem="9Pa-wf-CuB" firstAttribute="centerX" secondItem="nMI-7m-0vX" secondAttribute="centerX" id="KSm-02-P5q"/>
                             <constraint firstAttribute="trailing" secondItem="ugv-JF-YN9" secondAttribute="trailing" id="NF3-4q-fUg"/>
                             <constraint firstItem="U1W-Hk-fhJ" firstAttribute="leading" secondItem="nMI-7m-0vX" secondAttribute="leadingMargin" constant="26" id="Nts-LH-Bni"/>
                             <constraint firstItem="aQb-Ko-68H" firstAttribute="centerX" secondItem="nMI-7m-0vX" secondAttribute="centerX" id="QSC-0w-Rbu"/>
-                            <constraint firstItem="Sm0-FT-u02" firstAttribute="centerX" secondItem="nMI-7m-0vX" secondAttribute="centerX" id="Qdu-W7-NbR"/>
                             <constraint firstItem="U1W-Hk-fhJ" firstAttribute="centerX" secondItem="nMI-7m-0vX" secondAttribute="centerX" id="WNk-UW-8uv"/>
                             <constraint firstItem="RS4-d4-ghV" firstAttribute="top" secondItem="5KE-oC-Br6" secondAttribute="bottom" constant="70" id="Yli-MK-5ab"/>
                             <constraint firstItem="bX1-0e-WX4" firstAttribute="top" secondItem="ugv-JF-YN9" secondAttribute="bottom" id="Zu1-i0-hc5"/>
                             <constraint firstItem="U1W-Hk-fhJ" firstAttribute="top" secondItem="aQb-Ko-68H" secondAttribute="bottom" constant="16" id="dY3-kT-Vz0"/>
                             <constraint firstItem="wjV-o5-2Wo" firstAttribute="leading" secondItem="nMI-7m-0vX" secondAttribute="leadingMargin" constant="26" id="h9z-ps-2D9"/>
-                            <constraint firstItem="Sm0-FT-u02" firstAttribute="top" secondItem="u5M-5l-0gc" secondAttribute="bottom" constant="32" id="mpa-h7-2sC"/>
+                            <constraint firstItem="5KE-oC-Br6" firstAttribute="top" secondItem="9Pa-wf-CuB" secondAttribute="bottom" constant="8" id="jRk-9g-LIm"/>
                             <constraint firstItem="bX1-0e-WX4" firstAttribute="top" secondItem="f0W-Zi-jKm" secondAttribute="bottom" constant="32" id="nLH-dG-2Km"/>
+                            <constraint firstItem="9Pa-wf-CuB" firstAttribute="top" secondItem="u5M-5l-0gc" secondAttribute="bottom" constant="12" id="p5P-ep-Ki3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aQb-Ko-68H" secondAttribute="trailing" constant="26" id="tGS-g9-zBZ"/>
-                            <constraint firstItem="5KE-oC-Br6" firstAttribute="top" secondItem="Sm0-FT-u02" secondAttribute="bottom" constant="-0.5" id="zLU-dD-oMk"/>
                             <constraint firstItem="unG-Nm-lCu" firstAttribute="centerX" secondItem="nMI-7m-0vX" secondAttribute="centerX" id="zTc-XU-NmM"/>
                         </constraints>
                     </view>
@@ -156,20 +156,14 @@ Please sign in or create a new account. </string>
                             <imageView userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimage" translatesAutoresizingMaskIntoConstraints="NO" id="COp-lm-ae9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPER SIMPLE SHOPPING LIST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcF-JH-Sfn">
-                                <rect key="frame" x="49" y="60" width="278" height="21"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="save your time at the supermarket!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1X-Qo-2tC">
-                                <rect key="frame" x="68.5" y="80" width="238.5" height="16.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super Simple Shopping List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1X-Qo-2tC">
+                                <rect key="frame" x="95.5" y="80" width="185" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ds-X4-gic">
-                                <rect key="frame" x="42" y="160.5" width="291" height="36"/>
+                                <rect key="frame" x="42" y="175.5" width="291" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="VhX-em-hRm"/>
                                 </constraints>
@@ -178,7 +172,7 @@ Please sign in or create a new account. </string>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEV-B9-Yz4">
-                                <rect key="frame" x="42" y="212.5" width="291" height="36"/>
+                                <rect key="frame" x="42" y="227.5" width="291" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="YqF-ju-Wf1"/>
                                 </constraints>
@@ -187,7 +181,7 @@ Please sign in or create a new account. </string>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password (again!)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j1Y-cB-oFv">
-                                <rect key="frame" x="42" y="264.5" width="291" height="36"/>
+                                <rect key="frame" x="42" y="279.5" width="291" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="8ar-v6-p6y"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="MGN-a8-glW"/>
@@ -205,7 +199,7 @@ Please sign in or create a new account. </string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-f9-vJw">
-                                <rect key="frame" x="42" y="332.5" width="32" height="32"/>
+                                <rect key="frame" x="42" y="347.5" width="32" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -217,7 +211,7 @@ Please sign in or create a new account. </string>
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmd-Qm-Gwc">
-                                <rect key="frame" x="82" y="333" width="251" height="30"/>
+                                <rect key="frame" x="82" y="348" width="251" height="30"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                 <state key="normal" title="I agree with the privacy policy"/>
                                 <connections>
@@ -235,34 +229,48 @@ Please sign in or create a new account. </string>
                                     <segue destination="TKq-NA-OtI" kind="presentation" identifier="back-sign-in-segue" modalTransitionStyle="crossDissolve" id="y7h-lQ-ZlM"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s3cart" translatesAutoresizingMaskIntoConstraints="NO" id="p87-96-m8C">
+                                <rect key="frame" x="167.5" y="32" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="QjT-xG-nuh"/>
+                                    <constraint firstAttribute="height" constant="40" id="yI0-oi-h5e"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFn-0R-ub3">
+                                <rect key="frame" x="93.5" y="112" width="188" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="fEV-B9-Yz4" secondAttribute="trailing" constant="26" id="0GN-VK-qR3"/>
                             <constraint firstItem="6ds-X4-gic" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leadingMargin" constant="26" id="4Ej-KL-ZE3"/>
+                            <constraint firstItem="6ds-X4-gic" firstAttribute="top" secondItem="zFn-0R-ub3" secondAttribute="bottom" constant="40" id="4M6-JP-Hgs"/>
                             <constraint firstItem="COp-lm-ae9" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leading" id="5Fp-FT-zjB"/>
-                            <constraint firstItem="ZcF-JH-Sfn" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="6wl-jC-hNz"/>
                             <constraint firstItem="j1Y-cB-oFv" firstAttribute="top" secondItem="fEV-B9-Yz4" secondAttribute="bottom" constant="16" id="7Kw-28-85R"/>
                             <constraint firstItem="COp-lm-ae9" firstAttribute="top" secondItem="Ae3-ty-obG" secondAttribute="top" id="8hi-BU-TGm"/>
                             <constraint firstItem="fEV-B9-Yz4" firstAttribute="top" secondItem="6ds-X4-gic" secondAttribute="bottom" constant="16" id="8jD-fM-n49"/>
+                            <constraint firstItem="p87-96-m8C" firstAttribute="top" secondItem="6ak-ks-BwA" secondAttribute="bottom" constant="12" id="9tU-uf-bVp"/>
                             <constraint firstItem="CrK-Da-baD" firstAttribute="top" secondItem="COp-lm-ae9" secondAttribute="bottom" id="Amr-Pi-0uG"/>
                             <constraint firstItem="GaE-NQ-Uqq" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leadingMargin" id="GTQ-XH-CCR"/>
                             <constraint firstItem="CrK-Da-baD" firstAttribute="top" secondItem="COb-eS-lpX" secondAttribute="bottom" constant="32" id="JF8-ME-brn"/>
                             <constraint firstItem="COb-eS-lpX" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="JyP-4Z-MOy"/>
                             <constraint firstItem="6ds-X4-gic" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="Mqg-rG-jvl"/>
-                            <constraint firstItem="K1X-Qo-2tC" firstAttribute="top" secondItem="ZcF-JH-Sfn" secondAttribute="bottom" constant="-0.5" id="MvY-Gs-oaP"/>
+                            <constraint firstItem="zFn-0R-ub3" firstAttribute="top" secondItem="K1X-Qo-2tC" secondAttribute="bottom" constant="16" id="R4O-3m-asu"/>
                             <constraint firstItem="j1Y-cB-oFv" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leadingMargin" constant="26" id="RNh-ur-60D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j1Y-cB-oFv" secondAttribute="trailing" constant="26" id="Src-wG-9Hm"/>
-                            <constraint firstItem="K1X-Qo-2tC" firstAttribute="top" secondItem="ZcF-JH-Sfn" secondAttribute="bottom" constant="-0.5" id="TdE-w9-Onc"/>
                             <constraint firstItem="tmd-Qm-Gwc" firstAttribute="centerY" secondItem="OOb-f9-vJw" secondAttribute="centerY" id="UPe-CD-BRB"/>
-                            <constraint firstItem="6ds-X4-gic" firstAttribute="top" secondItem="K1X-Qo-2tC" secondAttribute="bottom" constant="64" id="Z4x-5T-fZv"/>
+                            <constraint firstItem="K1X-Qo-2tC" firstAttribute="top" secondItem="p87-96-m8C" secondAttribute="bottom" constant="8" id="YAu-Wo-Gtq"/>
                             <constraint firstItem="fEV-B9-Yz4" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leadingMargin" constant="26" id="Zvf-Zw-vIG"/>
                             <constraint firstItem="tmd-Qm-Gwc" firstAttribute="leading" secondItem="OOb-f9-vJw" secondAttribute="trailing" constant="8" id="cDx-0S-rpB"/>
                             <constraint firstItem="GaE-NQ-Uqq" firstAttribute="top" secondItem="6ak-ks-BwA" secondAttribute="bottom" id="gFQ-Zw-AGx"/>
                             <constraint firstItem="OOb-f9-vJw" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leadingMargin" constant="26" id="jHV-cP-ziT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6ds-X4-gic" secondAttribute="trailing" constant="26" id="jWK-If-mxS"/>
                             <constraint firstAttribute="trailing" secondItem="COp-lm-ae9" secondAttribute="trailing" id="owW-um-zZm"/>
-                            <constraint firstItem="ZcF-JH-Sfn" firstAttribute="top" secondItem="6ak-ks-BwA" secondAttribute="bottom" constant="40" id="p8A-7d-9p4"/>
+                            <constraint firstItem="zFn-0R-ub3" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="qEP-fU-plf"/>
+                            <constraint firstItem="p87-96-m8C" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="r9p-r3-7EW"/>
                             <constraint firstItem="OOb-f9-vJw" firstAttribute="top" secondItem="j1Y-cB-oFv" secondAttribute="bottom" constant="32" id="tGJ-pR-GLL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tmd-Qm-Gwc" secondAttribute="trailing" constant="26" id="xbq-Wp-ySa"/>
                             <constraint firstItem="K1X-Qo-2tC" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="ylP-t9-W0B"/>
@@ -341,6 +349,7 @@ Please sign in or create a new account. </string>
     </scenes>
     <resources>
         <image name="bgimage" width="2786" height="2792"/>
+        <image name="s3cart" width="790" height="743"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ATw-Zx-otB"/>

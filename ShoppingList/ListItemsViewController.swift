@@ -8,28 +8,61 @@
 
 import UIKit
 
-class ListItemsViewController: UIViewController {
-
+class ListItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddItemViewControllerDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var emptyListMessage: UILabel!
+    var shoppingList = [Product]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        navigationController?.isNavigationBarHidden = true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "add-items-segue" {
+            
+            let destinationViewController = segue.destination as! AddItemViewController
+            destinationViewController.delegate = self
+            destinationViewController.navigationController?.isNavigationBarHidden = true
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: UITableViewDelegate, UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        emptyListMessage.isHidden = (shoppingList.count > 0)
+        tableView.isHidden = (shoppingList.count == 0)
+        
+        return shoppingList.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "shopping-item-cell")!
+        
+        let product = shoppingList[indexPath.row]
+        
+        cell.textLabel?.text = product.name
+        
+        return cell
+    }
+    
+    
+    
+    // MARK: AddItemViewControllerDelegate
+
+    func didFinishedAddItems(selectedProducts: [Product]) {
+        
+        shoppingList = selectedProducts
+        tableView.reloadData()
+        
+    }
 
 }
