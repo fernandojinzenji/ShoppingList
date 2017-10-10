@@ -19,18 +19,30 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let productList = Product.generateSampleList()
+//    var productList = Product.generateSampleList()
+    var productList = [Product]()
     var productDataSource = [Product]()
     
     weak var delegate: AddItemViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Initial data source not filtered
-        self.productDataSource = self.productList
         
-        self.searchBar.delegate = self
+        DispatchQueue.main.async {
+            Product.list(completion: { (list) in
+                self.productList = list
+                
+                // Initial data source not filtered
+                self.productDataSource = self.productList
+                
+                self.searchBar.delegate = self
+                
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+                self.tableView.reloadData()
+            })
+        }
+
     }
     
     // MARK: Actions
@@ -63,7 +75,7 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if productDataSource.count > 0 {
+        if productList.count > 0 {
             return productDataSource.count
         }
         else {
@@ -84,12 +96,12 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
         // If no item was found, allow user to add the item
         if product.name == "new|item" && product.section == "no|sect" {
             
-            cell.nameLabel.text = "No item found. Click here to add it."
+            cell.nameLabel.text = "Item not found. Click here to add it."
             cell.isInListLabel.isHidden = true
         }
         else {
         
-            cell.nameLabel.text = "\(product.name) (\(product.section))"
+            cell.nameLabel.text = "\(product.name)"
             
             if product.addedToList {
                 self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
@@ -108,7 +120,25 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Mark product as selected in the full list
         let selectedProduct = self.productDataSource[indexPath.row]
         
-        if let cell = self.tableView.cellForRow(at: indexPath) as? AddItemTableViewCell {
+        if selectedProduct.name == "new|item", let item = searchBar.text {
+            
+            let newProduct: Product = {
+                let p = Product(name: item, section: "")
+                p.addedToList = true
+                return p
+            }()
+            
+            // Save to firebase
+            newProduct.saveToFirebase()
+            
+            productList.append(newProduct)
+            productDataSource = productList
+            
+            searchBar.text = ""
+            
+            tableView.reloadData()
+        }
+        else if let cell = self.tableView.cellForRow(at: indexPath) as? AddItemTableViewCell {
             
             cell.isInListLabel.isHidden = false
             

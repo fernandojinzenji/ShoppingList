@@ -59,7 +59,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last updated in XX/XX/XX XX:XX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvT-Q8-fxO">
-                                <rect key="frame" x="69.5" y="71.5" width="236" height="16.5"/>
+                                <rect key="frame" x="69.5" y="70" width="236" height="18"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -95,6 +95,7 @@
                             <constraint firstItem="ITa-3p-7L4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DXD-c0-R7G"/>
                             <constraint firstItem="5aF-FH-eMi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="E7U-a9-VH9"/>
                             <constraint firstItem="Khs-xG-J2U" firstAttribute="centerX" secondItem="jvT-Q8-fxO" secondAttribute="centerX" id="ESM-Gy-fX5"/>
+                            <constraint firstItem="jvT-Q8-fxO" firstAttribute="top" secondItem="f4x-MT-4hK" secondAttribute="bottom" constant="12" id="Gkf-mw-d5z"/>
                             <constraint firstItem="hpm-vf-75w" firstAttribute="top" secondItem="Khs-xG-J2U" secondAttribute="bottom" constant="8" id="Tpa-vh-Pct"/>
                             <constraint firstItem="5aF-FH-eMi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UqI-rU-oYC"/>
                             <constraint firstAttribute="trailing" secondItem="5aF-FH-eMi" secondAttribute="trailing" id="m3k-Uv-ysS"/>
@@ -186,10 +187,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="sHj-4o-Bv5" id="14N-rv-OM9"/>
-                                    <outlet property="delegate" destination="sHj-4o-Bv5" id="5cU-U4-MMC"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Check logged user and set correct storyboard
         var storyboard: UIStoryboard
-        if UserDefaults.standard.value(forKey: "loggedEmail") == nil {
+        if UserDefaults.standard.value(forKey: "userID") == nil {
             
             storyboard = UIStoryboard.init(name: "Login", bundle: .main)
         }

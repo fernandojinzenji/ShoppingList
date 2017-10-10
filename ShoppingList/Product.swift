@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class Product {
     
@@ -18,6 +19,28 @@ class Product {
         
         self.name = name
         self.section = section
+    }
+    
+    class func list(completion: @escaping ([Product]) -> ()) {
+    
+        var list = [Product]()
+        
+        if let currentListID = UserDefaults.standard.value(forKey: "listID") as? String {
+            
+            let ref = Database.database().reference(withPath: "products").child(currentListID)
+            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if let dictionary = snapshot.value as? [String : Any] {
+                    
+                    for key in dictionary.keys {
+                        list.append(Product(name: key, section: ""))
+                    }
+                    
+                    completion(list.sorted( by: { $0.name < $1.name }))
+                }
+            })
+        }
+
     }
     
     class func generateSampleList() -> [Product] {
@@ -45,6 +68,26 @@ class Product {
         list.append(Product(name: "frozen food", section: "frozen"))
         
         return list
+    }
+    
+    func saveToFirebase() {
+        guard let userID = UserDefaults.standard.value(forKey: "userID") as? String else { return }
+        
+        var ref = DatabaseReference()
+        
+        // Save first item in the list
+        if let currentListID = UserDefaults.standard.value(forKey: "listID") as? String {
+            
+            ref = Database.database().reference(withPath: "products").child(currentListID)
+        }
+        else
+        {
+            ref = Database.database().reference(withPath: "products").childByAutoId()
+            UserDefaults.standard.set(ref.key, forKey: "listID")
+        }
+        
+        let newRef = ref.child(name)
+        newRef.setValue(userID)
     }
     
 }
