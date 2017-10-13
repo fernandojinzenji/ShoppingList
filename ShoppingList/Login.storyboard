@@ -171,20 +171,10 @@ Please sign in or create a new account. </string>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEV-B9-Yz4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password (min 6)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEV-B9-Yz4">
                                 <rect key="frame" x="42" y="227.5" width="291" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="YqF-ju-Wf1"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password (again!)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j1Y-cB-oFv">
-                                <rect key="frame" x="42" y="279.5" width="291" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="8ar-v6-p6y"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="MGN-a8-glW"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
@@ -249,18 +239,16 @@ Please sign in or create a new account. </string>
                             <constraint firstItem="6ds-X4-gic" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leadingMargin" constant="26" id="4Ej-KL-ZE3"/>
                             <constraint firstItem="6ds-X4-gic" firstAttribute="top" secondItem="zFn-0R-ub3" secondAttribute="bottom" constant="40" id="4M6-JP-Hgs"/>
                             <constraint firstItem="COp-lm-ae9" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leading" id="5Fp-FT-zjB"/>
-                            <constraint firstItem="j1Y-cB-oFv" firstAttribute="top" secondItem="fEV-B9-Yz4" secondAttribute="bottom" constant="16" id="7Kw-28-85R"/>
                             <constraint firstItem="COp-lm-ae9" firstAttribute="top" secondItem="Ae3-ty-obG" secondAttribute="top" id="8hi-BU-TGm"/>
                             <constraint firstItem="fEV-B9-Yz4" firstAttribute="top" secondItem="6ds-X4-gic" secondAttribute="bottom" constant="16" id="8jD-fM-n49"/>
                             <constraint firstItem="p87-96-m8C" firstAttribute="top" secondItem="6ak-ks-BwA" secondAttribute="bottom" constant="12" id="9tU-uf-bVp"/>
                             <constraint firstItem="CrK-Da-baD" firstAttribute="top" secondItem="COp-lm-ae9" secondAttribute="bottom" id="Amr-Pi-0uG"/>
+                            <constraint firstItem="OOb-f9-vJw" firstAttribute="top" secondItem="fEV-B9-Yz4" secondAttribute="bottom" constant="84" id="Aue-8K-0iX"/>
                             <constraint firstItem="GaE-NQ-Uqq" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leadingMargin" id="GTQ-XH-CCR"/>
                             <constraint firstItem="CrK-Da-baD" firstAttribute="top" secondItem="COb-eS-lpX" secondAttribute="bottom" constant="32" id="JF8-ME-brn"/>
                             <constraint firstItem="COb-eS-lpX" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="JyP-4Z-MOy"/>
                             <constraint firstItem="6ds-X4-gic" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="Mqg-rG-jvl"/>
                             <constraint firstItem="zFn-0R-ub3" firstAttribute="top" secondItem="K1X-Qo-2tC" secondAttribute="bottom" constant="16" id="R4O-3m-asu"/>
-                            <constraint firstItem="j1Y-cB-oFv" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leadingMargin" constant="26" id="RNh-ur-60D"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="j1Y-cB-oFv" secondAttribute="trailing" constant="26" id="Src-wG-9Hm"/>
                             <constraint firstItem="tmd-Qm-Gwc" firstAttribute="centerY" secondItem="OOb-f9-vJw" secondAttribute="centerY" id="UPe-CD-BRB"/>
                             <constraint firstItem="K1X-Qo-2tC" firstAttribute="top" secondItem="p87-96-m8C" secondAttribute="bottom" constant="8" id="YAu-Wo-Gtq"/>
                             <constraint firstItem="fEV-B9-Yz4" firstAttribute="leading" secondItem="Ae3-ty-obG" secondAttribute="leadingMargin" constant="26" id="Zvf-Zw-vIG"/>
@@ -271,13 +259,11 @@ Please sign in or create a new account. </string>
                             <constraint firstAttribute="trailing" secondItem="COp-lm-ae9" secondAttribute="trailing" id="owW-um-zZm"/>
                             <constraint firstItem="zFn-0R-ub3" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="qEP-fU-plf"/>
                             <constraint firstItem="p87-96-m8C" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="r9p-r3-7EW"/>
-                            <constraint firstItem="OOb-f9-vJw" firstAttribute="top" secondItem="j1Y-cB-oFv" secondAttribute="bottom" constant="32" id="tGJ-pR-GLL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tmd-Qm-Gwc" secondAttribute="trailing" constant="26" id="xbq-Wp-ySa"/>
                             <constraint firstItem="K1X-Qo-2tC" firstAttribute="centerX" secondItem="Ae3-ty-obG" secondAttribute="centerX" id="ylP-t9-W0B"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="confirmPasswordTextField" destination="j1Y-cB-oFv" id="wS5-z7-nP7"/>
                         <outlet property="emailTextField" destination="6ds-X4-gic" id="aQ0-af-lBF"/>
                         <outlet property="passwordTextField" destination="fEV-B9-Yz4" id="9P3-Cf-6NV"/>
                         <outlet property="privacyPolicyCheckbox" destination="OOb-f9-vJw" id="G0q-cs-yLw"/>

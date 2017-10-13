@@ -19,7 +19,7 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-//    var productList = Product.generateSampleList()
+    var currentShoppingList = [Product]()
     var productList = [Product]()
     var productDataSource = [Product]()
     
@@ -28,14 +28,20 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.searchBar.delegate = self
+        
         DispatchQueue.main.async {
-            Product.list(completion: { (list) in
+            Product.getProductList(completion: { (list) in
                 self.productList = list
+                
+                // Mark items already in the shopping list
+                for product in self.currentShoppingList {
+                    let item = self.productList.filter( { $0.name == product.name } ).first
+                    item?.addedToList = true
+                }
                 
                 // Initial data source not filtered
                 self.productDataSource = self.productList
-                
-                self.searchBar.delegate = self
                 
                 self.tableView.delegate = self
                 self.tableView.dataSource = self
@@ -59,6 +65,8 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
             })
         }
         
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.tableView.reloadData()
     }
     
@@ -75,7 +83,7 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if productList.count > 0 {
+        if productDataSource.count > 0 {
             return productDataSource.count
         }
         else {
@@ -120,7 +128,7 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Mark product as selected in the full list
         let selectedProduct = self.productDataSource[indexPath.row]
         
-        if selectedProduct.name == "new|item", let item = searchBar.text {
+        if selectedProduct.name == "new|item", let item = searchBar.text, item != "" {
             
             let newProduct: Product = {
                 let p = Product(name: item, section: "")
@@ -129,10 +137,10 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
             }()
             
             // Save to firebase
-            newProduct.saveToFirebase()
+            newProduct.saveProduct()
             
             productList.append(newProduct)
-            productDataSource = productList
+            productDataSource = productList.sorted( by: { $0.name < $1.name })
             
             searchBar.text = ""
             
@@ -168,6 +176,29 @@ class AddItemViewController: UIViewController, UITableViewDelegate, UITableViewD
                     break
                 }
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            let item = productList[indexPath.row]
+            item.removeProduct()
+            
+            productList.remove(at: indexPath.row)
+            
+            if searchBar.text! == ""  {
+                self.productDataSource = self.productList
+            }
+            else {
+                self.productDataSource = self.productList.filter({ (p) -> Bool in
+                    
+                    return p.name.lowercased().contains(searchBar.text!.lowercased())
+                })
+            }
+            
+            tableView.reloadData()
         }
     }
 }

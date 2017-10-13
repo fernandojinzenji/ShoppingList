@@ -95,9 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				9C0AE2671F36462700F1C247 /* Main.storyboard */,
+				9C2978961F3587A700E7AF27 /* ListItemsViewController.swift */,
 				9C2978981F3587B200E7AF27 /* AddItemViewController.swift */,
 				9C29789A1F3587C000E7AF27 /* SettingsViewController.swift */,
-				9C2978961F3587A700E7AF27 /* ListItemsViewController.swift */,
 				9CD63CEA1F3964C90075D1CD /* AddItemTableViewCell.swift */,
 			);
 			name = Main;

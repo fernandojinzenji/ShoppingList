@@ -19,6 +19,17 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         navigationController?.isNavigationBarHidden = true
+        
+        DispatchQueue.main.async {
+            
+            Product.getShoppingList(completion: { (list) in
+                self.shoppingList = list
+                
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+                self.tableView.reloadData()
+            })
+        }
     }
 
     // MARK: Navigation
@@ -29,6 +40,7 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
             
             let destinationViewController = segue.destination as! AddItemViewController
             destinationViewController.delegate = self
+            destinationViewController.currentShoppingList = shoppingList
             destinationViewController.navigationController?.isNavigationBarHidden = true
         }
     }
@@ -54,13 +66,49 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            let item = shoppingList[indexPath.row]
+            item.removeFromList()
+            
+            shoppingList.remove(at: indexPath.row)
+            
+            tableView.reloadData()
+        }
+    }
     
+//    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+//        return "Check!"
+//    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .default, title: "👍", handler: { (action, indexPath) in
+            
+            self.tableView.dataSource?.tableView!(self.tableView, commit: .delete, forRowAt: indexPath)
+            return
+        })
+        
+        deleteButton.backgroundColor = UIColor.green
+        
+        return [deleteButton]
+    }
     
     // MARK: AddItemViewControllerDelegate
 
     func didFinishedAddItems(selectedProducts: [Product]) {
         
+        Product.clearShoppingList()
+        
+        for p in selectedProducts {
+            p.addInList()
+        }
+        
         shoppingList = selectedProducts
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.reloadData()
         
     }

@@ -13,7 +13,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var privacyPolicyCheckbox: UIView!
     
     var privacyPolicyChecked = false
@@ -23,7 +22,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
-        self.confirmPasswordTextField.delegate = self
         
         self.privacyPolicyCheckbox.isUserInteractionEnabled = true
         self.privacyPolicyCheckbox.layer.cornerRadius = 4.0
@@ -47,17 +45,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        if self.emailTextField.text!.isEmpty || self.passwordTextField.text!.isEmpty || self.confirmPasswordTextField.text!.isEmpty {
+        if self.emailTextField.text!.isEmpty || self.passwordTextField.text!.isEmpty {
             
             let alert = UIAlertController(title: "Required fields", message: "Sorry, but all fields are required", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        
-        if self.passwordTextField.text! != self.confirmPasswordTextField.text! {
-            
-            let alert = UIAlertController(title: "Passwords do not match", message: "Sorry, but your passwords do not match", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
@@ -86,7 +76,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         if self.privacyPolicyChecked == false {
             
             self.privacyPolicyChecked = true
-            self.privacyPolicyCheckbox.backgroundColor = UIColor.gray
+            self.privacyPolicyCheckbox.backgroundColor = UIColor.green
         }
         else {
             
